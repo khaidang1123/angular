@@ -4,6 +4,7 @@
         <tr>
             <th>Category id</th>
             <th>Category name</th>
+            <th>Slug</th>
             <th>Action</th>
         </tr>
     </thead>
@@ -11,6 +12,7 @@
         <tr *ngFor="let cate of listCate" id="row_{{cate.id}}">
             <td>{{ cate.id }}</td>
             <td>{{ cate.cate_name }}</td>
+            <td>{{ cate.slug }}</td>
             <td>
                 <a routerLink="update/{{ cate.id }}"><button class="btn btn-warning ms-1">Sửa</button></a>
                 <a (click)="onDelete(cate.id)" id="remove"><button class="btn btn-danger">Xóa</button></a>

@@ -12,7 +12,7 @@ export class ListProductComponent implements OnInit {
 
 
   listCate: any
-  listProduct: any
+  listProduct: Array<any> = []
   listProductByView: any
   page: number = 1
   minPrice: any
@@ -25,7 +25,7 @@ export class ListProductComponent implements OnInit {
     private router: Router
   ) { }
 
-  ngOnInit(): void { 
+  ngOnInit(): void {
     this.activeRoute.params.subscribe(event => {
       const { cateName } = event
       if (cateName == undefined) {
@@ -56,7 +56,11 @@ export class ListProductComponent implements OnInit {
 
   getAllProduct() {
     this.ps.get().subscribe((data) => {
-      this.listProduct = data
+      data.forEach((e: any) => {
+        if (e.status == 1) {
+          this.listProduct.push(e)
+        }
+      });
     })
   }
   currentListProduct = () => {

@@ -1,62 +1,52 @@
 {
   "products": [
     {
+      "id": 1,
       "product_name": "Iphone 13",
-      "image": "assets/image/product/iphone13.png",
       "price": 24000000,
       "quantity": 1000,
       "discount": 25,
-      "view": 50,
       "desc": "Hublot Spirit Of Big Bang Titanium Ceramic 45mm, 601.NM.0173.LR chiếc đồng hồ này sở hữu một kích thước thuộc hàng khủng: 45mm cùng với chất liệu titanium siêu bền nhẹ và cứng cỗ máy này lại không quá nặng nhưng vẫn đầm tay.",
       "categoryId": 1,
+      "image": "assets/image/product/iphone13.png",
       "status": 1,
-      "id": 1
+      "view": 50
     },
     {
+      "id": 2,
       "product_name": "Iphone 11",
-      "image": "assets/image/product/iphone11.png",
       "price": 10000000,
       "quantity": 1000,
       "discount": 5,
-      "view": 46,
       "desc": "Hublot Big Bang DJ Snake 45mm là thành quả của sự hợp tác giữa nghệ sĩ người Pháp DJ Snake và thương hiệu đồng hồ Hublot. Thiết kế sở hữu vô số khía cạnh đặc biệt giống như người nghệ sĩ tài năng đã truyền cảm hứng cho nó. Sự xuất hiện của chiếc đồng hồ Hublot Big Bang DJ Snake 45mm như một điểm nhấn, nhấn mạnh vào sự năng động, thể thao và khác biệt của chủ sở hữu.",
       "categoryId": 1,
+      "image": "assets/image/product/iphone11.png",
       "status": 1,
-      "id": 2,
-      "category": {
-        "cate_name": "Iphone",
-        "id": 1,
-        "slug": "apple-iphone"
-      }
+      "view": 46
     },
     {
+      "id": 3,
       "product_name": "Iphone 12 Pro Max",
-      "image": "assets/image/product/12promax.png",
       "price": 25600000,
       "quantity": 1000,
       "discount": 10,
-      "view": 80,
       "desc": "Graff Structural Tourbillon Skeleton Automatic mang mã hiệu MGSTO46TB được nhà sản xuất chế tác rất công phu với bộ vỏ được chế tác bằng chất liệu Platinum, mặt số có thiết kế Skeleton đầy hấp dẫn.",
       "categoryId": 1,
+      "image": "assets/image/product/12promax.png",
       "status": 1,
-      "id": 3,
-      "category": {
-        "cate_name": "Iphone",
-        "id": 1,
-        "slug": "apple-iphone"
-      }
+      "view": 100
     },
     {
+      "id": 4,
       "product_name": "Samsung Galaxy A52",
-      "image": "assets/image/product/galaxya52.png",
       "price": 15000000,
       "quantity": 500,
       "discount": 5,
-      "view": 70,
       "desc": "DEFY El Primero 21 có lẽ là mẫu đồng hồ thú vị nhất được ra mắt cùng thời điểm với những anh em của mình vào năm 2017. Phải là những bậc thầy trong chế tác đồng hồ, Zenith mới có thể chế tạo ra chiếc đồng hồ tuyệt phẩm như vậy.",
       "categoryId": 2,
+      "image": "assets/image/product/galaxya52.png",
       "status": 1,
-      "id": 4
+      "view": 70
     },
     {
       "product_name": "Oppo Reno 7 Z",
@@ -225,6 +215,18 @@
       "categoryId": 2,
       "status": 1,
       "id": 18
+    },
+    {
+      "id": 19,
+      "product_name": "sadas",
+      "price": "12122",
+      "quantity": "2112",
+      "discount": "21312",
+      "desc": "ádasdas",
+      "categoryId": "2",
+      "image": "abc",
+      "status": 0,
+      "view": 0
     }
   ],
   "categories": [
@@ -240,7 +242,8 @@
     },
     {
       "id": 3,
-      "cate_name": "Oppo"
+      "cate_name": "Oppo",
+      "slug": "oppo"
     },
     {
       "cate_name": "Xiaomi",
@@ -256,6 +259,11 @@
       "id": 6,
       "cate_name": "Vivo",
       "slug": "vivo"
+    },
+    {
+      "id": 7,
+      "cate_name": "ssssss",
+      "slug": "ssssss"
     }
   ],
   "users": [

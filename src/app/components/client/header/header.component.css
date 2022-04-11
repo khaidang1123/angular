@@ -20,6 +20,7 @@ main {
 .header_top {
     background-color: #f5f5f5;
     padding: 15px 0;
+    font-weight: 500;
 }
 
 .header_top_main {
@@ -507,6 +508,43 @@ header .nav nav ul li .dropdown_father ul li i {
 
 #sub_watches, #sub_brand {
     display: none;
+}
+#showUser{
+    font-size: 16px;
+}
+#showUserlogged{
+    position: relative;
+}
+.subShowUser{
+    position: absolute;
+    top: 50px;
+    left: 0;
+    background-color: #fff;
+    border-radius: 8px;
+    z-index: 9999;
+    box-shadow: 0 0 10px #999;
+    width: 235px;
+    transform: translateY(-5%);
+    opacity: 0; 
+    visibility: hidden;
+    transition: all .2s;
+}
+.subShowUser li{
+    list-style-type: none;
+    font-size: 16px;
+    width: 100%;
+}
+.subShowUser li a{
+    padding: 15px 0 15px 25px;
+    display: inline-block;
+    cursor: pointer;
+    width: 100%;
+}
+#checkShowUser:checked ~ .subShowUser{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0%);
+    transition: all .4s;
 }
 
 #sub_watches li {

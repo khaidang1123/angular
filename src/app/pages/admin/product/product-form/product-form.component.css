@@ -35,10 +35,18 @@
     width: 100%;
     height: 150px;
     resize: none;
-    text-indent: 10px;
+    padding:0 15px;
     margin: 10px 0;
 }
 .sliceForm{
     display: grid;
     grid-template-columns: 1fr 1fr;
+}
+#previewImage{
+    width: 100px;
+    margin-bottom: 15px;
+}
+#oldImage{
+    width: 100px;
+    margin-bottom: 15px;
 }

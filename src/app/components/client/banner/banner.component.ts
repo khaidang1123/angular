@@ -11,13 +11,18 @@ export class BannerComponent implements OnInit {
   sliders: any
   constructor(
     private sls: SliderService
-  ) { }
+  ) { 
+    this.runSlider()
+  }
 
   ngOnInit(): void {
     this.sls.get().subscribe(data => {
       this.sliders = data
-    })
+    }) 
+    this.runSlider()
+  }
 
+  runSlider(){
     window.onload = () => {
       let counter = 1;
       let myslide = document.querySelectorAll('.main'),
@@ -36,13 +41,13 @@ export class BannerComponent implements OnInit {
         clearInterval(setTime);
         setTime = setInterval(autoSlide, 4000);
       }
-
+  
       let setTime = setInterval(autoSlide, 4000);
       function autoSlide() {
         counter += 1;
         slidefun(counter);
       }
-
+  
       (<HTMLDivElement>document.querySelector(".fa-chevron-left")).onclick = () => {
         plusSlides(-1)
       }
@@ -58,7 +63,7 @@ export class BannerComponent implements OnInit {
       (<HTMLDivElement>document.querySelector("#dot3")).onclick = () => {
         currentSlide(3)
       }
-
+  
       slidefun(counter)
       function slidefun(n: number): any {
         let i;
@@ -79,5 +84,5 @@ export class BannerComponent implements OnInit {
       };
     }
   }
-
+  
 }

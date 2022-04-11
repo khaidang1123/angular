@@ -24,3 +24,7 @@ dl, ol, ul{
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.mat-h1, .mat-headline, .mat-typography h1{
+    margin: 0;
+    font: unset;
+}

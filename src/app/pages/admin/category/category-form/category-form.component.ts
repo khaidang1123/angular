@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CategoryService } from 'src/app/services/category/category.service';
 
@@ -21,7 +21,8 @@ export class CategoryFormComponent implements OnInit {
   ) {
     this.categoryForm = new FormGroup({
       id: new FormControl(''),
-      cate_name: new FormControl('')
+      cate_name: new FormControl('', Validators.required),
+      slug: new FormControl('', Validators.required)
     })
     this.id = this.activeRoute.snapshot.params['id']
     if (this.id != undefined) {
@@ -30,7 +31,8 @@ export class CategoryFormComponent implements OnInit {
         this.dataUpdate = data
         this.categoryForm = new FormGroup({
           id: new FormControl(this.dataUpdate.id),
-          cate_name: new FormControl(this.dataUpdate.cate_name)
+          cate_name: new FormControl(this.dataUpdate.cate_name, Validators.required),
+          slug: new FormControl(this.dataUpdate.slug, Validators.required)
         })
       })
     }
@@ -52,6 +54,9 @@ export class CategoryFormComponent implements OnInit {
         this.router.navigate(["/admin/category"])
       })
     }
+  }
+  returnPage(){
+    this.router.navigate(["/admin/category"])
   }
 
 }

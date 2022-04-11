@@ -37,3 +37,11 @@
     padding: 15px 0;
     padding-left: 35px;
 }
+#personal-infor{
+    display: block;
+    border: 5px solid #999;
+    width: 300px;
+    margin: auto;
+    margin-top: 50px;
+    border-radius: 8px;
+}

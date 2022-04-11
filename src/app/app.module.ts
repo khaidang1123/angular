@@ -15,7 +15,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatPaginatorModule  } from '@angular/material/paginator';
 import { MatTableModule  } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
-import { DashboardLayoutComponent } from './layouts/dashboard-layout/dashboard-layout/dashboard-layout.component';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { ProductManageComponent } from './pages/admin/product/product-manage/product-manage.component';
 import { CategoryFormComponent } from './pages/admin/category/category-form/category-form.component'
@@ -34,6 +33,12 @@ import { CategoryDetailComponent } from './pages/admin/category/category-detail/
 import { HeaderComponent } from './components/client/header/header.component';
 import { FooterComponent } from './components/client/footer/footer.component';
 import { BannerComponent } from './components/client/banner/banner.component';
+import { LoginComponent } from './pages/client/login/login.component';
+import { RegisterComponent } from './pages/client/register/register.component';
+import { GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from 'angularx-social-login';
+import { DashboardLayoutComponent } from './layouts/dashboard-layout/dashboard-layout.component';
+import { ProductAdminDetailComponent } from './pages/admin/product/product-admin-detail/product-admin-detail.component';
+import { ShowValidateComponent } from './components/show-validate/show-validate.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,7 +58,11 @@ import { BannerComponent } from './components/client/banner/banner.component';
     CategoryDetailComponent,
     HeaderComponent,
     FooterComponent,
-    BannerComponent
+    BannerComponent,
+    LoginComponent,
+    RegisterComponent,
+    ProductAdminDetailComponent,
+    ShowValidateComponent
   ],
   imports: [
     BrowserModule,
@@ -68,11 +77,29 @@ import { BannerComponent } from './components/client/banner/banner.component';
     MatPaginatorModule,
     MatButtonModule,
     MatTableModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SocialLoginModule
   ],
   providers: [
     ProductService,
-    CategoryService
+    CategoryService,
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              '739897525655-hv7bt0nq5ectdkcvh8j7kd2hm5fhqlt7.apps.googleusercontent.com'
+            )
+          },
+        ],
+        onError: (err: any) => {
+          console.error(err);
+        }
+      } as SocialAuthServiceConfig,
+    }
   ],
   bootstrap: [AppComponent]
 })

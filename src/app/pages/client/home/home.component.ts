@@ -25,8 +25,11 @@ export class HomeComponent implements OnInit {
   ) { }
   ngOnInit(): void {
     this.ps.get().subscribe(data => {
-      for (let i = data.length - 3; i < data.length; i++) {
-        this.newProduct.push(data[i])
+      for (let i = 0; i < data.length; i++) {
+        if (data[i].status == 1) {
+          this.newProduct.push(data[i])
+        }
+        if (this.newProduct.length > 2) break;
       }
     })
     this.ps.getProductByCate(1, 5).subscribe(data => {
@@ -49,8 +52,8 @@ export class HomeComponent implements OnInit {
       this.sliderBestSeller = arrBestSeller.slice(0, 3)
       this.listBestSeller = arrBestSeller.slice(3, 5)
     })
-    
-    
+
+
   }
   discoverSub() {
     $(".background-main-content").addClass("active_sub")

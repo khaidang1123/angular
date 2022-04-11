@@ -36,7 +36,7 @@ export class ProductDetailComponent implements OnInit {
           behavior: 'smooth' 
         })
       }
-      this.ps.getOne(id).subscribe(data => {
+      this.ps.getOne(id, "category").subscribe(data => {
         this.productDetail = data
         this.status = this.productDetail.quantity > 0 ? 'Còn hàng' : 'Hết hàng'
         this.model = this.productDetail.model == 0 ? 'Nam' : 'Nữ'

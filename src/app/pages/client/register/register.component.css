@@ -1,12 +1,12 @@
-.main-login{
+.main-register{
     width: 100%;
-    height: 600px;
+    height: 700px;
     background-image: url("https://res.cloudinary.com/dcalzi23m/image/upload/v1649166998/945dd8f2da4d15134c5c_b1qjmu.jpg");
     margin: 40px 0;
     display: flex;
     align-items: center;
 }
-.main-login form{
+.main-register form{
     background-color: #fff;
     width: 400px;
     margin:auto;
@@ -14,32 +14,32 @@
     display: block;
     border-radius: 7px;
 }
-.main-form-login{
+.main-form-register{
     display: block;
     width: 85%;
     margin: auto;
     margin-top: 25px;
 }
-.main-form-login h3{
+.main-form-register h3{
     font-size: 25px;
     margin: 30px 0;
     display: block;
 }
-.main-form-login input[type="text"], .main-form-login input[type="password"], .main-form-login button{
+.main-form-register input[type="text"], .main-form-register input[type="password"], .main-form-register button{
     width: 100%;
     margin: 25px 0;
     padding: 9px 0;
     border: 1px solid #c5c5c5;
     display: block;
 }
-.main-form-login input{
+.main-form-register input{
     text-indent: 15px;
 }
-.main-form-login button{
+.main-form-register button{
     background-color: #000;
     color: #fff;
 }
-.main-form-login img{
+.main-form-register img{
     width: 24px;
 }
 .sub-action{

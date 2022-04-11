@@ -1,1 +1,25 @@
-<p>login works!</p>
+<div class="main-login">
+    <form action="">
+        <div class="main-form-login">
+            <h3>Đăng nhập</h3>
+            <input type="text" placeholder="Nhập email của bạn...">
+            <input type="password" placeholder="Nhập mật khẩu...">
+            <div class="sub-action">
+                <div>
+                    <input type="checkbox" name="" id=""> Ghi nhớ
+                </div>
+                <a routerLink="">Quên mật khẩu</a>
+            </div>
+            <button>Đăng nhập</button>
+            <p id="orLogin">Hoặc</p>
+            <div id="loginWithGoogle" (click)="signInWithGoogle()">
+                <img src="assets/image/logo-google.png" alt="">
+                Đăng nhập bằng google
+            </div>
+            <div id="register">
+                <span>Bạn mới biết đến chúng tôi? </span> <a routerLink="/register"> Đăng ký</a>
+            </div>
+        </div>
+    </form>
+</div>
+<app-footer></app-footer>

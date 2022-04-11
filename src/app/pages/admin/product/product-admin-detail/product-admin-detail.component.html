@@ -1,0 +1,20 @@
+<button id="btn_return" class="btn btn-primary" (click)="returnPage()">Quay lại</button>
+
+<div *ngIf="productDetail" class="main_content">
+    <div class="img">
+        <img [src]="productDetail.image" alt="">
+    </div>
+
+    <div class="content">
+        <h2 name="product_name" id="name_pr">{{ productDetail.product_name }}</h2> <br>
+        <span id="status">Trạng thái: <span>{{ productDetail.status == 0 ? "Đang ẩn" : "Đang hiển thị" }}</span></span> <br>
+        <hr style="color: #fff;">
+        <span id="price">Giá sale: <span id="new_cost">{{ formatCurrency(productDetail.price - (productDetail.price *
+                productDetail.discount / 100 )) }}</span> <del id="old_cost" *ngIf="productDetail.discount > 0">{{
+                formatCurrency(productDetail.price) }}</del>
+        </span>
+        <span id="brand">Thương hiệu: {{ productDetail.category.cate_name }}</span>
+        <span>Mô tả: </span> <p id="desc">{{ productDetail.desc }}</p>
+    </div>
+
+</div>

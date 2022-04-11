@@ -869,3 +869,17 @@ button {
     height: 4px;
     background-color: #333;
 }
+
+#myself{
+    bottom: 0;
+    background-color: rgba(255, 166, 0, 0.799);
+    color: #000;
+    font-weight: 900;
+    width: fit-content;
+    padding: 8px 20px;
+    margin: auto;
+    margin-top: 100px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}

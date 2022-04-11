@@ -2,7 +2,10 @@
     <div>
         <label for="">Mã loại hàng</label> <input type="text" formControlName="id"  placeholder="Auto Number" readonly>
         <label for="">Tên loại hàng</label> <input type="text" formControlName="cate_name">
-        <button name="btn_add" class="btn btn-success">{{ action }}</button>
-        <button class="ms-2 btn btn-danger">Hủy</button>
+        <app-show-validate [formField]="categoryForm.get('cate_name')" key="Tên loại hàng"></app-show-validate>
+        <label for="">Slug</label> <input type="text" formControlName="slug">
+        <app-show-validate [formField]="categoryForm.get('slug')" key="Slug"></app-show-validate>
+        <button name="btn_add" class="btn btn-success" [disabled]="!categoryForm.valid">{{ action }}</button>
+        <button type="button" class="ms-2 btn btn-danger" (click)="returnPage()">Hủy</button>
     </div>
 </form>

@@ -1,20 +1,33 @@
 <form [formGroup]="productForm" (ngSubmit)="onSubmit(productForm.value)" id="func_form" class="sliceForm">
     <div>
-        <label for="">Mã loại hàng</label> <input type="text" formControlName="id" placeholder="Auto Number" readonly>
-        <label for="">Tên loại hàng</label> <input type="text" formControlName="productName">
-        <label for="">Hình ảnh</label> <input type="file" formControlName="productName">
-        <label for="">Giá</label> <input type="text" formControlName="productName">
+        <label for="" hidden>Mã hàng hóa</label> <input type="text" formControlName="id" placeholder="Auto Number" readonly hidden>
+        <label for="">Tên hàng hóa</label> <input type="text" formControlName="product_name">
+        <app-show-validate [formField]="productForm.get('product_name')" key="Tên loại hàng"></app-show-validate>
+        <label for="">Hình ảnh</label> <input type="file" id="image" (change)="imageChange($event)">
+        <div>
+            <img [src]="oldImage" alt="" id="oldImage">
+            <i *ngIf="previewUpload && id" class="fa-solid fa-arrows-left-right"></i>
+            <img [src]="previewUpload" alt="" id="previewImage">
+        </div>
+        <label for="">Giá</label> <input type="text" formControlName="price">
+        <app-show-validate [formField]="productForm.get('price')" key="Giá"></app-show-validate>
+        <label for="">Số lượng</label> <input type="text" formControlName="quantity">
+        <app-show-validate [formField]="productForm.get('quantity')" key="Số lượng"></app-show-validate>
     </div>
     <div>
-        <label for="">Giảm giá</label> <input type="text" formControlName="productName" placeholder="%">
+        <label for="">Giảm giá</label> <input type="text" formControlName="discount" placeholder="%">
+        <app-show-validate [formField]="productForm.get('discount')" key="Giảm giá"></app-show-validate>
         <label for="">Mô tả</label> <textarea name="" cols="30" rows="10" formControlName="desc"></textarea>
+        <app-show-validate [formField]="productForm.get('desc')" key="Mô tả"></app-show-validate>
         <label for="">Mã loại hàng</label>
         <select name="" formControlName="categoryId">
+            <option disabled hidden [value]="selectUndefinedOptionValue">-- select --</option>
             <option *ngFor="let cate of listCate" value="{{ cate.id }}">{{ cate.cate_name }}</option>
         </select>
+        <app-show-validate [formField]="productForm.get('categoryId')" key="Loại hàng"></app-show-validate>
     </div>
     <div>
-        <button name="btn_add" class="btn btn-success">{{ action }}</button>
-        <button type="button" class="ms-2 btn btn-danger">Hủy</button>
+        <button name="btn_add" class="btn btn-success" [disabled]="!productForm.valid">{{ action }}</button>
+        <button type="button" class="ms-2 btn btn-danger" (click)="returnPage()">Hủy</button>
     </div>
 </form>

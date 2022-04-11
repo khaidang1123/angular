@@ -12,10 +12,26 @@
                     <div class="user">
                         <input type="checkbox" id="check_user" hidden>
                         <label for="check_user">
-                            <a routerLink="/login">
+                            <a *ngIf="!userDetail" routerLink="/login">
                                 <i class="far fa-user-circle"></i>
                                 <span>Tài khoản</span>
                             </a>
+                            <div id="showUserlogged">
+                                <input type="checkbox" id="checkShowUser" hidden>
+                                <label for="checkShowUser" *ngIf="userDetail" style="cursor: pointer;" id="showUser">
+                                    <i class="far fa-user-circle"></i>
+                                    <span>{{ userDetail.name }}</span>
+                                </label>
+                                <div class="subShowUser">
+                                    <div id='user_action'>
+                                        <li><a routerLink=''>Quản lí tài khoản</a></li>
+                                        <li><a routerLink=''>Đổi mật khẩu</a></li>
+                                        <li><a routerLink=''>Quản lí đơn hàng </a></li>
+                                        <li><a routerLink=''>Trang chủ quản trị</a></li>
+                                        <li><a routerLink="signout" (click)="signOut()">Đăng xuất</a></li>
+                                    </div>
+                                </div>
+                            </div>
                         </label>
                         <div class="bg_user">
                             <ul class="not_login">
